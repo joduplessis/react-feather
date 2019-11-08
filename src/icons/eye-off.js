@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const EyeOff = (props) => {
-  const { color, size, ...otherProps } = props;
+  const { color, size, thickness, ...otherProps } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@ const EyeOff = (props) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth={props.strokeWidth}
+      strokeWidth={thickness}
       strokeLinecap="round"
       strokeLinejoin="round"
       {...otherProps}
@@ -24,13 +24,14 @@ const EyeOff = (props) => {
 
 EyeOff.propTypes = {
   color: PropTypes.string,
-  strokeWidth: PropTypes.number,
+  thickness: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 EyeOff.defaultProps = {
   color: 'currentColor',
   size: '24',
+  thickness: '2',
 };
 
 export default EyeOff;

@@ -67,7 +67,7 @@ icons.forEach((i) => {
     import PropTypes from 'prop-types';
 
     const ${ComponentName} = (props) => {
-      const { color, size, ...otherProps } = props;
+      const { color, size, thickness, ...otherProps } = props;
       return (
         <svg ${attrsToString(defaultAttrs)}>
           ${featherIcons[i]}
@@ -77,7 +77,7 @@ icons.forEach((i) => {
 
     ${ComponentName}.propTypes = {
       color: PropTypes.string,
-  strokeWidth: PropTypes.number,
+  thickness: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       size: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
@@ -87,6 +87,7 @@ icons.forEach((i) => {
     ${ComponentName}.defaultProps = {
       color: 'currentColor',
       size: '24',
+  thickness: '2',
     }
 
     export default ${ComponentName}
