@@ -11,7 +11,7 @@ const Voicemail = (props) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
+      strokeWidth={props.strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
       {...otherProps}
@@ -25,6 +25,7 @@ const Voicemail = (props) => {
 
 Voicemail.propTypes = {
   color: PropTypes.string,
+  strokeWidth: PropTypes.number,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 

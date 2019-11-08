@@ -77,6 +77,7 @@ icons.forEach((i) => {
 
     ${ComponentName}.propTypes = {
       color: PropTypes.string,
+  strokeWidth: PropTypes.number,
       size: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
